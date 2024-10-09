@@ -1,5 +1,5 @@
 let fim = document.getElementById('finalizado');//Msg fim, após o voto
-let candidatoL = 0, candidatoA = 0, candidatoS = 0, candidatoB=0;//números dos candidatos
+let candidatoL = 0, candidatoA = 0, candidatoS = 0, candidatoB=0, candidatoM=0;//números dos candidatos
 let numero = '';//Variável "numero começa vazia"
 
 //Função para imprimir os números na tela
@@ -21,8 +21,7 @@ function imagemCand(numero){
         candidatoL++;
     }
     if(numero === '136'){
-        document.getElementById('image').src = 'images/Aline.jpeg';
-        document.getElementById('image').style.width = 
+        document.getElementById('image').src = 'images/Aline.jpeg'; 
         document.getElementById('name').innerHTML = 'Aline';
         candidatoA++;
     }
@@ -30,6 +29,11 @@ function imagemCand(numero){
         document.getElementById('image').src = 'images/Sabrina.jpeg';
         document.getElementById('name').innerHTML = 'Sabrina';
         candidatoS++;
+    }
+    if(numero === '125'){
+        document.getElementById('image').src = 'images/Mariah.jpeg';
+        document.getElementById('name').innerHTML = 'Mariah';
+        candidatoM++;
     }
 }
 
@@ -64,15 +68,27 @@ function apurar(){
     localStorage.setItem('candidatoL', candidatoL++);
     localStorage.setItem('candidatoA', candidatoA++);
     localStorage.setItem('candidatoS', candidatoS++);
+    localStorage.setItem('candidatoM', candidatoM++);
     localStorage.setItem('candidatoB', candidatoB++);
     window.location.href = '../pages/apuração.html';
     
 }
 
 document.getElementById('resL').innerHTML = localStorage.getItem('candidatoL') || 0;
-document.getElementById('resA').innerText = localStorage.getItem('candidatoA') || 0;
-document.getElementById('resS').innerText = localStorage.getItem('candidatoS') || 0;
-document.getElementById('resB').innerText = localStorage.getItem('candidatoB') || 0;
+document.getElementById('resA').innerHTML = localStorage.getItem('candidatoA') || 0;
+document.getElementById('resS').innerHTML = localStorage.getItem('candidatoS') || 0;
+document.getElementById('resM').innerHTML = localStorage.getItem('candidatoM') || 0;
+document.getElementById('resB').innerHTML = localStorage.getItem('candidatoB') || 0;
+
+//Função para limpar a apuração
+function clearAP(){
+    localStorage.clear();
+    document.getElementById('resL').innerHTML = 0;
+    document.getElementById('resA').innerHTML = 0;
+    document.getElementById('resS').innerHTML = 0;
+    document.getElementById('resM').innerHTML = 0;
+    document.getElementById('resB').innerHTML = 0;
+}
 
 
 

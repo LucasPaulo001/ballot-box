@@ -178,8 +178,8 @@ img#image{
     }
     .number{ 
         display: flex;
-        height: 20%;
-        align-items: stretch;
+        height: 10%;
+        align-items: center;
         justify-content: center;    
     }
     #name{
@@ -193,5 +193,32 @@ img#image{
     }
     .img{
         padding-top: 30px;
+    }
+    #finalizado{
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 950px) and (orientation: landscape) {
+    #interact{
+        padding-top: 15px;
+        gap: 15px;
+    }
+    .urna-content{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100vh;
+        align-items: end;
+    }
+    #buttons, #screen{
+        height: 100%;
+        padding: 10px;
+    }
+    .number{
+        height: 10%;
+        align-items: center;
+    }
+    #digito, #finalizado{
+        font-size: 30px;
+        font-weight: bold;
     }
 }
